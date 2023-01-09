@@ -12,6 +12,7 @@ int main(void)
 
     cout << "Hello World!" << endl;
     cout << "update!" << endl;
+    cout << "update_ver2!" << endl;
 
     return 0;
 }
