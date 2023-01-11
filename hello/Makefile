@@ -10,7 +10,7 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $@ $(OBJS) $(LOCAL_OPTIONS)
 
-$(OBJS): hello.cpp
+$(OBJS): $(SRCS)
 	$(CC) -c -o $(OBJS) $(SRCS) $(LOCAL_OPTIONS)
 
 clean:
