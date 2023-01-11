@@ -1,0 +1,3 @@
+void job();
+void hobby();
+
