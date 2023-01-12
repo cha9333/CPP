@@ -1,14 +1,17 @@
-intro_exe: job.o hobby.o main.o
-	gcc -o intro_exe job.o hobby.o main.o
+CC=gcc
+CFLAGS=-o
+LOCAL_OPTIONS=-std=c++11
+TARGET=intro_exe
+OBJS=job.o hobby.o main.o
+SRCS=$(OBJS:.o=.c)
 
-job.o:	
-	gcc -c -o job.o job.c
+all: $(TARGET)
 
-hobby.o:	
-	gcc -c -o hobby.o hobby.c
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) $@ $(OBJS)
 
-main.o:	
-	gcc -c -o main.o main.c
+%.o: %.c
+	$(CC) -c -o $@ $^
 
 clean:
 	rm -f *.o

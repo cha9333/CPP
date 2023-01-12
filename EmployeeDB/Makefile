@@ -1,8 +1,15 @@
 CC=g++
 CFLAGS=-o
 LOCAL_OPTIONS=-std=c++11
-TARGET=ref
-OBJS=ref.o
+# TARGET=EmployeeTest
+# OBJS=EmployeeTest.o Employee.o
+
+# TARGET=Databasetest
+# OBJS=DatabaseTest.o Database.o Employee.o
+
+TARGET=UserInterface
+OBJS=UserInterface.o Database.o Employee.o
+
 SRCS=$(OBJS:.o=.cpp)
 
 all: $(TARGET)
@@ -10,8 +17,8 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $@ $(OBJS) $(LOCAL_OPTIONS)
 
-$(OBJS): $(SRCS)
-	$(CC) -c -o $(OBJS) $(SRCS) $(LOCAL_OPTIONS)
+%.o: %.cpp
+	$(CC) -c -o $@ $^ $(LOCAL_OPTIONS)
 
 clean:
 	rm -f $(OBJS)

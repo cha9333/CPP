@@ -17,9 +17,9 @@ namespace Records{
             std::string getFirstName() const;
             void setLastName(std::string inLastName);
             std::string getLastName() const;
-            void setEmployeeNumber(std::string inEmployeeNumber);
+            void setEmployeeNumber(int inEmployeeNumber);
             int getEmployeeNumber() const;
-            void setSalary(std::string inSalary);
+            void setSalary(int inNewSalary);
             int getSalary() const;
             bool getIsHired() const;
         protected:
