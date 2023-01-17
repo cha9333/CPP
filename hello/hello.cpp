@@ -3,18 +3,28 @@
 
 using namespace std;
 
+class CTestData
+{
+public:
+    explicit CTestData(int nParam) : m_nData(nParam){}
+
+    operator int(void) { return m_nData; }
+
+    int GetData() const { return m_nData;}
+    void SetData(int nParam){m_nData=nParam;}
+
+public:
+    int m_nData;
+};
+
 int main(void)
 {
-    array<int, 3> arr={9, 8, 7};
-
-    cout << "Array size = " << arr.size() << endl;
-    for(auto i : arr) cout << i << endl;
-
-    cout << "Hello World!" << endl;
-    cout << "update!" << endl;
-    cout << "update_ver2!" << endl;
+    CTestData a(10);
+    cout << a.GetData() << endl;
+    cout << a << endl;
+    cout << (int)a << endl;
+    cout << static_cast<int>(a) << endl;
 
     return 0;
 }
-
 
