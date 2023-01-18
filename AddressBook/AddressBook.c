@@ -24,7 +24,7 @@ USERDATA *FindNode(char *pszName)
     USERDATA *pTmp=g_Head.pNext;
 
     while(pTmp!=NULL){
-         if(strcmp(pTmp->szName, pszName)==0) return pTmp;
+        if(strcmp(pTmp->szName, pszName)==0) return pTmp;
 
         pTmp=pTmp->pNext;
     }
@@ -48,7 +48,9 @@ int AddNewNode(char *pszName, char *pszPhone)
     pNewUser->pNext=NULL;
 
     pNewUser->pNext=g_Head.pNext;
+    printf("pNewUser->pNext = %p\n", pNewUser->pNext);
     g_Head.pNext=pNewUser;
+    printf("g_Head.pNext = %p\n", g_Head.pNext);
 
     return 1;
 }
@@ -99,6 +101,8 @@ void PrintAll()
 {
     USERDATA *pTmp=g_Head.pNext;
 
+    
+    
     while(pTmp!=NULL){
          printf("[%p] %s\t%s [%p]\n", pTmp, pTmp->szName, pTmp->szPhone, pTmp->pNext);
 

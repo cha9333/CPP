@@ -1,0 +1,18 @@
+CC=g++
+CPPFLAGS=-o
+LOCAL_OPTIONS=-std=c++11
+TARGET=addr_cpp
+OBJS=UserData.o MyList.o UserInterface.o AddressBook_oop.o
+SRCS=$(OBJS:.o=.cpp)
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) $(CPPFLAGS) $@ $(OBJS) $(LOCAL_OPTIONS)
+
+%.o: %.cpp
+	$(CC) -c -o $@ $^
+
+clean:
+	rm -f $(OBJS)
+	rm -f $(TARGET)

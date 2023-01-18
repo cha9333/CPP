@@ -1,0 +1,18 @@
+CC=gcc
+CFLAGS=-o
+LOCAL_OPTIONS=-lncurses
+TARGET=addr_c
+OBJS=AddressBook.o
+SRCS=$(OBJS:.o=.c)
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) $@ $(OBJS) $(LOCAL_OPTIONS)
+
+$(OBJS): $(SRCS)
+	$(CC) -c -o $(OBJS) $(SRCS) $(LOCAL_OPTIONS)
+
+clean:
+	rm -f $(OBJS)
+	rm -f $(TARGET)
