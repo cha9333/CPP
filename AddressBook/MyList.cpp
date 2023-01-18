@@ -1,5 +1,5 @@
 #include <iostream>
-#include <ncurses>
+#include <ncurses.h>
 #include "MyList.h"
 using namespace std;
 
@@ -35,18 +35,20 @@ void CMyList::PrintAll(void)
         pTmp=pTmp->pNext;
     }
     cout << "CUserData Counter : " << CUserData::GetUserDataCounter() << endl;
-    _getch();
+    getch();
 }
 
 CMyNode* CMyList::FindNode(const char* pszKey)
 {
+	CMyNode *mn;
 
+	return mn;
 
 }
 
 int CMyList::RemoveNode(const char*pszKey)
 {
-
+	return 1;
 }
 
 void CMyList::ReleaseList(void)
